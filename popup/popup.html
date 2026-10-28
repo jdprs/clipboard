@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 280px; margin: 0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; color: #1f2329; background: #fff; }
+    .hd { padding: 12px 14px; background: #3370ff; color: #fff; }
+    .hd h1 { margin: 0; font-size: 14px; font-weight: 600; }
+    .hd p { margin: 3px 0 0; font-size: 11px; opacity: .85; }
+    .bd { padding: 12px 14px; }
+    .row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; font-size: 12px; }
+    .row label { color: #4e5561; }
+    .stat { font-size: 12px; color: #4e5561; margin-bottom: 10px; }
+    .stat b { color: #3370ff; }
+    button { width: 100%; padding: 8px; margin: 4px 0; border: 1px solid #dee0e3; background: #fff; border-radius: 8px; font-size: 12px; cursor: pointer; color: #1f2329; }
+    button:hover { background: #f5f6f7; }
+    button.primary { background: #3370ff; color: #fff; border-color: #3370ff; }
+    button.danger { color: #f53f3f; }
+    select { font-size: 12px; padding: 3px 6px; border: 1px solid #dee0e3; border-radius: 6px; }
+    .tip { font-size: 11px; color: #8a8f99; line-height: 1.6; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="hd">
+    <h1>摘板 ClipBoard</h1>
+    <p>多网页片段对照悬浮台 · 纯本地</p>
+  </div>
+  <div class="bd">
+    <div class="stat">当前分组「<span id="gname">—</span>」共 <b id="cnt">0</b> 条摘录</div>
+    <div class="row"><label>悬浮台</label><button id="toggle" class="primary">显示 / 隐藏</button></div>
+    <div class="row"><label>保留策略</label>
+      <select id="retention">
+        <option value="session">关闭浏览器自动清空</option>
+        <option value="1day">保留 1 天</option>
+        <option value="7days">保留 7 天</option>
+        <option value="forever">一直保留</option>
+      </select>
+    </div>
+    <button id="clearGroup" class="danger">清空当前分组</button>
+    <button id="clearAll" class="danger">清空全部摘录</button>
+    <div class="tip">用法：网页里选中文字或右键图片 → 选「加入摘板」，悬浮在屏幕角落对着抄，不用来回切标签。</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
